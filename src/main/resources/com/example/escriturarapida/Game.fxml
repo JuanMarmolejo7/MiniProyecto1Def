@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.escriturarapida.controller.GameController">
+   <children>
+      <ImageView fitHeight="462.0" fitWidth="632.0" layoutX="-2.0" layoutY="-15.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Images/FondoGame.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="124.0" fitWidth="172.0" layoutX="-2.0" layoutY="316.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Images/Palabra%20a%20escribir.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="126.0" fitWidth="164.0" layoutX="461.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Images/Timer.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="301.0" fitWidth="433.0" layoutX="111.0" layoutY="64.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Images/TextField.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="210.0" layoutY="301.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Images/TextField.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="124.0" fitWidth="172.0" layoutX="230.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Images/Palabra%20a%20escribir.png" />
+         </image>
+      </ImageView>
+      <TextField fx:id="inputField" layoutX="237.0" layoutY="337.0" onAction="#handleInput" prefHeight="69.0" prefWidth="144.0" promptText="Escribe aqui" style="-fx-background-color: transparent; -fx-text-fill: white; -fx-border-color: white; -fx-border-width: 2;">
+         <font>
+            <Font name="VT323 Regular" size="24.0" />
+         </font>
+      </TextField>
+       <Label fx:id="feedbackLabel" alignment="CENTER" layoutX="200.0" layoutY="370.0" prefWidth="200.0" text="" textFill="WHITE" />
+       <Label layoutX="26.0" layoutY="346.0" prefHeight="57.0" prefWidth="79.0" text="Nivel" textFill="WHITE">
+         <font>
+            <Font name="VT323 Regular" size="38.0" />
+         </font>
+      </Label>
+      <Label layoutX="251.0" layoutY="22.0" prefHeight="64.0" prefWidth="131.0" text="1. Escriba la palabra&#10;enter para confirmar&#10;2. Sé rápido" textFill="WHITE">
+         <font>
+            <Font name="VT323 Regular" size="15.0" />
+         </font>
+      </Label>
+      <Label fx:id="levelLabel" layoutX="108.0" layoutY="351.0" prefHeight="48.0" prefWidth="48.0" text="1" textFill="WHITE">
+         <font>
+            <Font name="VT323 Regular" size="38.0" />
+         </font>
+      </Label>
+      <Label fx:id="timerLabel" alignment="CENTER" layoutX="510.0" layoutY="37.0" prefHeight="51.0" prefWidth="56.0" text="20" textFill="WHITE">
+         <font>
+            <Font name="Press Start 2P Regular" size="35.0" />
+         </font>
+      </Label>
+      <Label fx:id="wordLabel" alignment="CENTER" layoutX="163.0" layoutY="139.0" prefHeight="139.0" prefWidth="306.0" text="Aqui salen palabras" textFill="WHITE">
+         <font>
+            <Font name="VT323 Regular" size="23.0" />
+         </font>
+      </Label>
+
+      <ImageView id="RegresarFlecha" fx:id="FlechaRegresar" fitHeight="85.0" fitWidth="119.0" layoutX="-14.0" layoutY="-14.0" onMouseClicked="#onReturnClick" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Images/FlechaBack.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="pauseButton" fitHeight="52.0" fitWidth="44.0" layoutX="119.0" layoutY="7.0" onMouseClicked="#onPauseClick" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Images/realpausasinfontintin.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

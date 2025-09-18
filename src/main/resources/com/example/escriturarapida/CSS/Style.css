@@ -1,0 +1,24 @@
+.root {
+   -fx-font-family: "VT323";
+}
+
+/* estilo del boton jugar */
+.btn-jugar {
+    -fx-background-color: #293133;
+    -fx-text-fill: white;
+    -fx-font-size: 40px;
+    -fx-border-radius: 30;
+    -fx-background-radius: 30;
+
+}
+/* Estilo del boton ayuda*/
+.btn-ayuda{
+    -fx-background-color: #2B3C41;
+    -fx-text-fill: white;
+    -fx-font-size: 20px;
+    -fx-border-radius: 20;
+    -fx-background-radius: 20;
+
+}
+
+

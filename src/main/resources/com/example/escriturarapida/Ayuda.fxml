@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" stylesheets="@CSS/StyleHelp.css" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.escriturarapida.controller.MenuController">
+   <children>
+      <Label alignment="CENTER" layoutX="14.0" layoutY="1.0" prefHeight="113.0" prefWidth="639.0" text="Ayuda!" textFill="WHITE">
+         <font>
+            <Font name="Press Start 2P Regular" size="56.0" />
+         </font>
+      </Label>
+      <Label alignment="TOP_LEFT" layoutX="5.0" layoutY="137.0" prefHeight="294.0" prefWidth="645.0" text="1. El juego consiste en escribir la palabra que aparezca en &#10;pantalla antes que acabe el tiempo.&#10;2. Presione la tecla &quot;Enter&quot; para validar la palabra.&#10;3. Si hay un error de escritura corrijalo antes que acabe el&#10; tiempo.&#10;4. Al inicio de la partida tendrá 20 segundos, cada 5 niveles &#10;se reduce el tiempo.&#10;5. Si se acaba el tiempo y no escribiste la palabra de forma&#10; correcta perdiste." textFill="WHITE">
+         <font>
+            <Font name="VT323 Regular" size="26.0" />
+         </font>
+      </Label>
+      <ImageView id="RegresarFlecha" fx:id="RegresarFlecha" fitHeight="97.0" fitWidth="163.0" layoutY="9.0" onMouseClicked="#onReturnClick" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Images/FlechaBack.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

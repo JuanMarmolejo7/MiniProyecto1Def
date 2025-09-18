@@ -1,0 +1,41 @@
+.text-field {
+    -fx-background-color: transparent;
+    -fx-background-insets: 0;
+    -fx-background-radius: 0;
+    -fx-text-fill: white;
+}
+
+.text-area {
+    -fx-background-color: transparent;
+    -fx-background-insets: 0;
+    -fx-background-radius: 0;
+    -fx-text-fill: white;
+}
+.btn-retry {
+    -fx-background-color: #FB0700;
+    -fx-text-fill: white;
+    -fx-font-size: 20px;
+    -fx-font-family: VT323;
+    -fx-border-radius: 30;
+    -fx-background-radius: 30;
+
+}
+
+.btn-menu{
+    -fx-background-color: #F9DB01;
+    -fx-text-fill: white;
+    -fx-font-size: 20px;
+    -fx-font-family: VT323;
+    -fx-border-radius: 30;
+    -fx-background-radius: 30;
+
+}
+
+.btn-stats{
+    -fx-background-color: #01FA03;
+    -fx-text-fill: white;
+    -fx-font-size: 20px;
+    -fx-font-family: VT323;
+    -fx-border-radius: 30;
+    -fx-background-radius: 30;
+}

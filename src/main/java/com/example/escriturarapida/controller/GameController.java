@@ -36,14 +36,12 @@ public class GameController {
      */
     @FXML
     public void initialize() {
-
         startLevel();
     }
 
     /**
      * Starts the level, resetting all the things changed on the latest game
      */
-
     private void startLevel() {
         logic.loadWordsForLevel(GameState.currentLevel);
         String newWord = logic.pickNewWord();
@@ -67,7 +65,7 @@ public class GameController {
             timerLabel.setText(String.valueOf(time));
             if (time <= 0 && !isPaused) {
                 timeline.stop();
-                endGame();
+                checkFinalInput(); // ✅ verificamos palabra al acabarse el tiempo
             }
         }));
         timeline.setCycleCount(Timeline.INDEFINITE);
@@ -85,7 +83,7 @@ public class GameController {
             if (timeline != null) timeline.pause();
             inputField.setDisable(true);
             feedbackLabel.setText("Juego en pausa");
-            feedbackLabel.setStyle("-fx-text-fill:yellow");
+            feedbackLabel.setStyle("-fx-text-fill:yellow; -fx-font-family: 'VT323'; -fx-font-size: 30px;");
         } else {
             isPaused = false;
             if (timeline != null) timeline.play();
@@ -101,15 +99,81 @@ public class GameController {
     @FXML
     private void handleInput() {
         if (isPaused) return;
+
         if (inputField.getText().equals(logic.getCurrentWord())) {
             GameState.successfulLevels++;
             GameState.currentLevel++;
-            startLevel();
+            feedbackLabel.setText("¡Correcto!");
+            feedbackLabel.setStyle("-fx-text-fill: green; -fx-font-family: 'VT323'; -fx-font-size: 40px;");
+
+            inputField.clear();
+
+
+            Timeline hideMessage = new Timeline(
+                    new KeyFrame(Duration.seconds(1), e -> {
+                        feedbackLabel.setText("");
+                        feedbackLabel.setStyle("");
+                        startLevel();
+                    })
+            );
+            hideMessage.setCycleCount(1);
+            hideMessage.play();
+
         } else {
             GameState.failedAttempts++;
             feedbackLabel.setText("Incorrecto");
-            feedbackLabel.setStyle("-fx-text-fill: red;");
+            feedbackLabel.setStyle("-fx-text-fill: red; -fx-font-family: 'VT323'; -fx-font-size: 40px;");
             inputField.clear();
+
+            // Ocultar el mensaje después de 1.5 segundos
+            Timeline hideMessage = new Timeline(
+                    new KeyFrame(Duration.seconds(1.5), e -> {
+                        feedbackLabel.setText("");
+                        feedbackLabel.setStyle("");
+                    })
+            );
+            hideMessage.setCycleCount(1);
+            hideMessage.play();
+        }
+    }
+
+    /**
+     * Verify the word when the time is up
+     */
+    private void checkFinalInput() {
+        String typedWord = inputField.getText().trim();
+
+        if (typedWord.equals(logic.getCurrentWord())) {
+            GameState.successfulLevels++;
+            GameState.currentLevel++;
+            feedbackLabel.setText("¡Correcto (justo a tiempo)!");
+            feedbackLabel.setStyle("-fx-text-fill: green; -fx-font-family: 'VT323'; -fx-font-size: 40px;");
+
+            Timeline hideMessage = new Timeline(
+                    new KeyFrame(Duration.seconds(1), e -> {
+                        feedbackLabel.setText("");
+                        feedbackLabel.setStyle("");
+                        startLevel();
+                    })
+            );
+            hideMessage.setCycleCount(1);
+            hideMessage.play();
+
+        } else {
+            GameState.failedAttempts++;
+            feedbackLabel.setText("Incorrecto (se acabó el tiempo)");
+            feedbackLabel.setStyle("-fx-text-fill: red; -fx-font-family: 'VT323'; -fx-font-size: 30px;");
+
+            Timeline hideMessage = new Timeline(
+                    new KeyFrame(Duration.seconds(1.5), e -> {
+                        feedbackLabel.setText("");
+                        feedbackLabel.setStyle("");
+                        endGame();
+                    })
+            );
+            hideMessage.setCycleCount(1);
+            hideMessage.play();
+
         }
     }
 

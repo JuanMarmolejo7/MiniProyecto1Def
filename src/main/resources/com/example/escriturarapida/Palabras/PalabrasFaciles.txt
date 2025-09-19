@@ -27,7 +27,6 @@ llanto
 amor
 odio
 miedo
-sueno
 tiempo
 vida
 muerte
@@ -46,7 +45,6 @@ animal
 planta
 hombre
 mujer
-nino
 padre
 madre
 hermano

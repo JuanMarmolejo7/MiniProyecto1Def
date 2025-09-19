@@ -52,7 +52,7 @@ desenlace
 tragedia
 comedia
 dramatico
-melodramarico
+melodramatico
 farsa
 satira
 parodia

@@ -44,8 +44,8 @@
             <Font name="VT323 Regular" size="24.0" />
          </font>
       </TextField>
-       <Label fx:id="feedbackLabel" alignment="CENTER" layoutX="200.0" layoutY="370.0" prefWidth="200.0" text="" textFill="WHITE" />
-       <Label layoutX="26.0" layoutY="346.0" prefHeight="57.0" prefWidth="79.0" text="Nivel" textFill="WHITE">
+       <Label fx:id="feedbackLabel" alignment="CENTER" layoutX="220.0" layoutY="247.0" prefWidth="200.0" text="" textFill="WHITE" />
+       <Label layoutX="26.0" layoutY="346.0" prefHeight="57.0" prefWidth="79.0" style="-fx-font-family: VT323" text="Nivel" textFill="WHITE">
          <font>
             <Font name="VT323 Regular" size="38.0" />
          </font>
